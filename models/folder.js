@@ -7,7 +7,7 @@ const folderSchema = new mongoose.Schema({
   },
   url: {
     type: mongoose.Schema.Types.String,
-    unique: true,
+    required: true,
   },
   parentFolderId: {
     type: mongoose.Schema.Types.ObjectId,
