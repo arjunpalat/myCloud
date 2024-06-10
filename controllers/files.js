@@ -1,7 +1,7 @@
 const filesRouter = require("express").Router();
 const File = require("../models/file");
 const uuid = require("uuid");
-const ImageData = require("../models/imagedata");
+const ImageData = require("../models/data");
 const Folder = require("../models/folder");
 
 filesRouter.get("/", async (request, response) => {

@@ -2,7 +2,7 @@ const foldersRouter = require("express").Router();
 const Folder = require("../models/folder");
 const uuid = require("uuid");
 const File = require("../models/file");
-const ImageData = require("../models/imagedata");
+const ImageData = require("../models/data");
 
 const deleteFolderRecursive = async (folder) => {
   for (const subFolderId of folder.subFolders) {
