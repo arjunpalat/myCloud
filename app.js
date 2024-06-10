@@ -7,6 +7,7 @@ const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
 const apiRouter = require("./controllers/api");
+const path = require("path");
 
 mongoose.set("strictQuery", false);
 
