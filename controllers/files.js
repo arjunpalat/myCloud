@@ -36,12 +36,9 @@ filesRouter.post("/", async (request, response) => {
   const { name, size, base64Data, type } = request.body;
 
   if (queryType === "url") {
-    const parentFolder = await Folder.findOne({ url: `/${queryValue}` });
+    const parentFolder = await Folder.findOne({ url: `/${queryValue}`, userId: request.user });
     if (!parentFolder) {
       return response.status(400).json({ error: "Parent folder not found" });
-    }
-    if (parentFolder.userId.toString() !== request.user.toString()) {
-      return response.status(401).json({ error: "Unauthorized" });
     }
 
     const newFile = new File({
